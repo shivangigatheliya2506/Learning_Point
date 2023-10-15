@@ -16,16 +16,14 @@ const dotenv = require("dotenv");
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 
+
 //database connect
 database.connect();
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-	cors({
-		origin:"http://localhost:3000",
-		credentials:true,
-	})
+	cors()
 )
 
 app.use(
